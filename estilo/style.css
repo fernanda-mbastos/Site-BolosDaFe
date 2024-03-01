@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "bolo";
+  src: url('../estilo/fonte/Stars&Love-BottomHeavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "menu";
+  src: url('../estilo/fonte/Oswald-Bold.ttf') format('truetype');
+}
+
+
+:root {
+  --cor01: #C2516D;
+  --cor02: #CFF0F6;
+  --cor03: #FED7DA;
+  --cor04: #FFF8EB;
+  
+}
+
+* {
+margin: 0 0;
+}
+  
+body {
+  background-color: var(--cor02);
+  font-size: 16px;
+}
+
+.cabecalho {
+  background: var(--cor01);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  margin: auto;
+}
+
+.titulo {
+  color: var(--cor03); 
+  padding-top: 1rem;
+  font-size: 4rem;
+  font-family: 'bolo';
+  text-shadow: 2px 2px 2px #1110108a; 
+  padding-left: 15rem;
+}
+
+.cabecalho > p {
+  color: var(--cor03);
+  padding-left: 10rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgb(95, 94, 94);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.menu {
+  background-color: #C2516D;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0.5rem;
+}
+
+.menu > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #FED7DA;
+  font-weight: bold;
+  font-family: 'menu';
+  padding: 0.5rem;
+}
+
+.menu > a:hover {
+  background-color: var(--cor03);
+  color: var(--cor01);
+}
+
+.home {
+  background-color: var(--cor04);
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin: 5rem;
+  border-radius: 1rem;
+}
+
+footer {
+  background-color: #C2516D;
+  color: #FFF8EB;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 10rem;
+  padding: 0.5rem;
+}
+
+.localizacao {
+ text-align: center;
+ margin-top: 4rem;
+}
+
+#teste {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cenoura {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding-bottom: 20rem;
+}
+
+#img-cenoura {
+  border-radius: 1rem;
+  position: absolute;
+}
+
+#txt-cenoura {
+  color: #944256;
+
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 1rem;
+  background-color: #fff8eb9c;
+  display: none;
+}
+
+#txt-cenoura > h2 {
+  font-family: "bolo";
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+
+#txt-cenoura > p {
+  padding: 0.8rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+
+}
