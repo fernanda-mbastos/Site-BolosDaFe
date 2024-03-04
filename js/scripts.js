@@ -35,22 +35,22 @@ function findNossosBolos() {
 
   if (nossosBolos) { 
 
-      let id = document.getElementById('img-choco');
-      if (id) {
-        // BOLO DE chocolate     
-        criateText("Bolo de Chocolate", "O bolo de chocolate é o preferido das crianças! Sua textura úmida e sua cor vibrante são qualidades bastantes admiradas por todos que provam esse delicioso bolo!");          
-        showText();     
-      }
-   
+      let idChoco = document.getElementById('img-choco');
+      let idCeno = document.getElementById('img-ceno');
+      createTag();
+        if (idChoco) {
+          // BOLO DE chocolate  
+          criateTextChoco("Bolo de Chocolate", "O bolo de chocolate é o preferido das crianças! Sua textura úmida e sua cor vibrante são qualidades bastantes admiradas por todos que provam esse delicioso bolo!");          
+          showText(); 
+        }          
   } else {
     return;
   }
 }
 
+// função criar texto para as imagens dos bolos 
 
-// função criar texto para as imagens dos bolos
-
-function criateText(title, text) {
+function criateTextChoco(title, text) {
 
   let newTitle = document.createTextNode(title)
   let newText = document.createTextNode(text);
@@ -62,15 +62,30 @@ function criateText(title, text) {
   
 }
 
+// funçao criar tag para os textos dos bolos
+
+function createTag() {
+  let newDiv = document.createElement('div');
+  let img = document.getElementById('bolos');
+  let h2 = document.createElement('h2');
+  let p = document.createElement('p');
+  img.appendChild(newDiv);
+  newDiv.id = 'txt-bolo';
+  newDiv.appendChild(h2);
+  h2.id = 'h2-bolo';
+  newDiv.appendChild(p);
+  p.id = 'p-bolo';  
+}
+
 // funcão aparecer texto na imagem do bolo
 
 function showText() {
-  let img = document.querySelector(".img"); 
-  let txtBolo = document.querySelector("#txt-bolo"); 
-    img.addEventListener("mouseenter", function() {
-      txtBolo.style.display = 'block';  
-     })
-    img.addEventListener("mouseleave", function() {
-      txtBolo.style.display = 'none';  
-    })
+    let img = document.querySelector(".img");    
+    let txtBolo = document.querySelector("#txt-bolo"); 
+      img.addEventListener("mouseenter", function() {
+        txtBolo.style.display = 'block';  
+      })
+      img.addEventListener("mouseleave", function() {
+        txtBolo.style.display = 'none';  
+      })
 }
