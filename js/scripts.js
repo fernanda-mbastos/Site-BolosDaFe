@@ -1,8 +1,6 @@
-// função para localizar o botão na pagina Home
+// função para localizar o botão na pagina Home e incluir video
 let btn = document.getElementById('button');
-
 findButton();
-
 function findButton () { 
   if (btn) {
     function createVideo() {
@@ -28,64 +26,71 @@ function findButton () {
   }
 }
 
+//funçao para página Nossos Bolos
 findNossosBolos();
 
 function findNossosBolos() {
   let nossosBolos = document.querySelector('.nossos-bolos');
 
-  if (nossosBolos) { 
-
-      let idChoco = document.getElementById('img-choco');
-      let idCeno = document.getElementById('img-ceno');
-      createTag();
-        if (idChoco) {
-          // BOLO DE chocolate  
-          criateTextChoco("Bolo de Chocolate", "O bolo de chocolate é o preferido das crianças! Sua textura úmida e sua cor vibrante são qualidades bastantes admiradas por todos que provam esse delicioso bolo!");          
-          showText(); 
-        }          
+  if (nossosBolos) {    
+  
+    showText();
+  
   } else {
     return;
   }
 }
 
-// função criar texto para as imagens dos bolos 
-
-function criateTextChoco(title, text) {
-
-  let newTitle = document.createTextNode(title)
-  let newText = document.createTextNode(text);
-  let pTitle = document.getElementById("h2-bolo");
-  let pBolo = document.getElementById("p-bolo");
-  
-  pTitle.appendChild(newTitle);
-  pBolo.appendChild(newText);
-  
-}
-
-// funçao criar tag para os textos dos bolos
-
-function createTag() {
-  let newDiv = document.createElement('div');
-  let img = document.getElementById('bolos');
-  let h2 = document.createElement('h2');
-  let p = document.createElement('p');
-  img.appendChild(newDiv);
-  newDiv.id = 'txt-bolo';
-  newDiv.appendChild(h2);
-  h2.id = 'h2-bolo';
-  newDiv.appendChild(p);
-  p.id = 'p-bolo';  
-}
-
-// funcão aparecer texto na imagem do bolo
+//função para passar o mouse em cada imagem dos bolos
 
 function showText() {
-    let img = document.querySelector(".img");    
-    let txtBolo = document.querySelector("#txt-bolo"); 
-      img.addEventListener("mouseenter", function() {
-        txtBolo.style.display = 'block';  
-      })
-      img.addEventListener("mouseleave", function() {
-        txtBolo.style.display = 'none';  
-      })
+  let img = document.querySelectorAll(".img-bolo");
+  let txtBolo = document.querySelectorAll('.txt-bolo');
+
+  for(let i=0; i<img.length ; i++) {
+
+    img[i].addEventListener("mousemove", function() { 
+
+        txtBolo[i].style.display = 'block';          
+            
+    });
+
+    img[i].addEventListener("mouseleave", function() { 
+
+      txtBolo[i].style.display = 'none';          
+          
+  });   
+  }    
 }
+
+
+
+
+/* funçao criar tag para os textos dos bolos
+    function createTag(title, text) {
+  //cria as tags div, h2, p em cada imagem de cada bolo
+ 
+  let img = document.querySelectorAll('.img');
+ 
+  for (i=0;i<img.length;i++) {
+    let newDiv = document.createElement('div');
+    let h2 = document.createElement('h2');
+    let p = document.createElement('p');
+    img[i].appendChild(newDiv);
+    newDiv.id = 'txt-bolo';
+    newDiv.appendChild(h2);
+    h2.id = 'h2-bolo';
+    newDiv.appendChild(p);
+    p.id = 'p-bolo';
+  }
+
+   
+  //criar os textos que vão nas tags
+  let newTitle = document.createTextNode(title)
+  let newText = document.createTextNode(text);
+  let pTitle = document.getElementById('h2-bolo');
+  let pBolo = document.getElementById('p-bolo');
+
+  pTitle.appendChild(newTitle);
+  pBolo.appendChild(newText);
+} */

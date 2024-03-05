@@ -21,13 +21,32 @@
           <a href="localização.html">contato</a>
         </nav>
   </header>
-  <main>
-    <button id="button">delicie-se ! <br> (clique aqui!)</button>
-    <div id="video"> </div>
-    <section class="home">     
-      <p>Bem vindo ao nosso site! <br>Somos uma empresa imaginária, idealizada por Fernanda Bastos para fins educacionais, porém os bolos usados de inspiração são reais! Fazer bolo sempre foi um hobby de sua criadora! Decidiu aprender sua primeira receita de bolo de cenoura ainda adolescente, pois era seu sabor preferido! Após a primeira receita de sucesso, foi aprendendo e testando outras para servir de café da manhá na pousada em que foi sócia! Sempre recebeu muitos elogios dos clientes e ao iniciar seus estudos de programççao em HMTL, CSS e JavaScript, decidiu fazer esse site como forma de aprendizado! </p>
-    </section>
-  </main>
+  <section class="formulario">
+  <h2>FAÇA SUA ENCOMENDA DIRETO PELO NOSSO SITE!</h2>
+    <form action="#" method="#" class="form">
+      <label for="name">Nome:</label>
+      <input type="text" id="name">
+
+      <label for="tel">Telefone:</label>
+      <input type="text" id="tel">
+
+      <label for="mail">Email:</label>
+      <input type="email" id="mail">
+
+      <label for="sabor">Sabor:</label>
+      <select name="sabor" id="sabor">
+      <option value="">Qual sabor do bolo?</option>
+      <option value="choco">Chocolate</option>
+      <option value="cenoura">Cenoura</option>
+      </select>
+
+      <label for="msg">Message:</label>      
+      <textarea name="user_message" id="msg"></textarea>
+
+      <button type="submit">Enviar sua encomenda!</button>      
+  
+  </form>  
+  </section>
   <footer>Site criado por Fernanda Bastos</footer>  
   <script src="js/scripts.js"></script>
 </body>
