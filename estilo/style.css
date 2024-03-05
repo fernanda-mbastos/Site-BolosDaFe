@@ -133,6 +133,12 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+#teste {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto;
+}
   
 .img-bolo  {
   display: flex;
@@ -194,12 +200,20 @@ img {
 
 label {
   font-weight: bold;
-
 }
 
-input, select, textarea {
-  width: 100%;
+input, textarea, select {
   padding: 5px;
   border: 1px solid var(--cor03);
   border-radius: 10px;
+}
+
+.formulario button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--cor01);
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
 }
