@@ -63,8 +63,82 @@ function showText() {
   }    
 }
 
+//funçao para página Contato - Formulário
+findFormulario();
+
+function findFormulario() {
+  let formulario = document.querySelector('.formulario');
+
+  if (formulario) {    
+
+    const form = document.querySelector('#form')
+    const nameInput = document.querySelector('#name')
+    const emailInput = document.querySelector('#email')
+    const telInput = document.querySelector('#tel')
+    const saborSelect = document.querySelector('#sabor')
+    const messageTextarea = document.querySelector('#msg')
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      //verifica se o nome está vazio
+      if(nameInput.value === '') {
+        alert('Preencha seu nome!')
+        return;
+      }
+
+       //verificar se telefone está preenchido e é válido
+       if(telInput.value === '' || !telValid(telInput.value)) {
+        alert('Preencha com um telefone válido!')
+        return;
+      }
+      //verificar se o e-mail está preenchido e é válido
+      if(emailInput.value === '' || !emailValid(emailInput.value)) {
+        alert('Preencha com um e-mail válido!')
+        return;
+      }
 
 
+
+      form.submit();
+
+
+    });
+
+  
+  
+  } else {
+    return;
+  }
+}
+
+// função que valida telefone
+function telValid(tel) {
+   // cria uma regra para validar o email
+   const telRegex = new RegExp(
+    // (XX)XXXXX-XXXX
+    /^(\d{2}|\(\d{2}\))\d{5}([-/.]\d{4}|\d{4})$/
+   );
+
+    if(telRegex.test(tel)) {
+      return true;
+    }
+    return false;
+}
+
+//fução que valida e-mail
+function emailValid(email) {
+  // cria uma regra para validar o email
+  const emailRegex = new RegExp(
+    // usuario1234@dominio.com.br
+    /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
+  );
+
+  if(emailRegex.test(email)) {
+    return true;
+  }
+  return false;
+}
 
 /* funçao criar tag para os textos dos bolos
     function createTag(title, text) {

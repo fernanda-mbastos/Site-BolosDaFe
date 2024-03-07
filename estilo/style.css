@@ -120,14 +120,14 @@ footer {
   padding: 0.5rem;
 }
 
-/* estilo da localizacao.HTML */
+/* estilo da página localizacao */
 
 .localizacao {
  text-align: center;
  margin-top: 4rem;
 }
 
-/* estilo da nossosBolos.HTML */
+/* estilo da página nossosBolos */
 
 .nossos-bolos {
   display: flex;
@@ -177,7 +177,7 @@ img {
   text-transform: uppercase;
 }
 
-/* estilo da contato.HTML */
+/* estilo da página contato */
 .formulario {
   font-family: Helvetica, sans-serif;
   box-sizing: border-box;
@@ -190,7 +190,7 @@ img {
   padding-bottom: 1rem;
 }
 
-.form {
+#form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
