@@ -76,20 +76,20 @@ function findFormulario() {
     const emailInput = document.querySelector('#email')
     const telInput = document.querySelector('#tel')
     const saborSelect = document.querySelector('#sabor')
-    const messageTextarea = document.querySelector('#msg')
+    const msgTextarea = document.querySelector('#msg')
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
       //verifica se o nome está vazio
-      if(nameInput.value === '') {
-        alert('Preencha seu nome!')
-        return;
-      }
+      
 
        //verificar se telefone está preenchido e é válido
        if(telInput.value === '' || !telValid(telInput.value)) {
         alert('Preencha com um telefone válido!')
+        return;
+      }if(nameInput.value === '') {
+        alert('Preencha seu nome!')
         return;
       }
       //verificar se o e-mail está preenchido e é válido
@@ -98,14 +98,21 @@ function findFormulario() {
         return;
       }
 
+      // verificar sabor selecionado
+      if(saborSelect.value === '') {
+        alert('Selecione um sabor!')
+        return;
+      }
 
+      //verificar a mensagem
+      if(msgTextarea.value === '') {
+        alert('Selecione um sabor!')
+        return;
+      }
 
       form.submit();
 
-
-    });
-
-  
+    });  
   
   } else {
     return;
@@ -139,6 +146,8 @@ function emailValid(email) {
   }
   return false;
 }
+
+
 
 /* funçao criar tag para os textos dos bolos
     function createTag(title, text) {
